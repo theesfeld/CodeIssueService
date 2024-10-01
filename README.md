@@ -108,7 +108,22 @@ The CodeIssueService is a sophisticated software project designed to enhance iss
 
 ###  Prerequisites
 
-**C**: `version x.y.z`
+#### Core:
+
+**gcc**: `version 14.2.1`
+
+#### Libraries:
+
+**cJSON**
+**curl**
+**git2**
+**hiredis**
+**microhttpd**
+**pthread**
+
+### Services:
+
+Redis or Valkey server
 
 ###  Installation
 
@@ -124,34 +139,27 @@ Build the project from source:
 ❯ cd CodeIssueService
 ```
 
-3. Install the required dependencies:
+3. Build:
 ```sh
-❯ gcc -o myapp main.c
+❯ make
+> sudo make install
 ```
 
 ###  Usage
 
-To run the project, execute the following command:
+To run the project, edit the configuration file:
 
 ```sh
-❯ ./myapp
+> sudo vim /etc/code_issue_service.conf
 ```
 
-###  Tests
-
-Execute the test suite using the following command:
+Then enable/start the service:
 
 ```sh
-❯ /* No common unit test framework in C */
+> sudo systemctl enable --now code_issue_service.service
 ```
 
----
-
-##  Project Roadmap
-
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
+Output will be sent to syslog
 
 ---
 
@@ -202,12 +210,4 @@ Contributions are welcome! Here are several ways you can contribute:
 
 ##  License
 
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
-
----
-
-##  Acknowledgments
-
-- List any resources, contributors, inspiration, etc. here.
-
----
+GPL 3.0
