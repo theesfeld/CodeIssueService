@@ -1,0 +1,20 @@
+name: Issue Listener
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  notify_server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify the server of new issue
+        run: |
+          curl -X POST http://your-server-address/notify \
+            -H "Content-Type: application/json" \
+            -d '{
+              "repository":"${{ github.repository }}",
+              "issue_number":"${{ github.event.issue.number }}",
+              "issue_title":"${{ github.event.issue.title }}",
+              "issue_body":"${{ github.event.issue.body }}"
+            }'

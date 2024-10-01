@@ -1,0 +1,19 @@
+[Unit]
+Description=Code Issue Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/code_issue_service
+Restart=always
+User=your_user
+WorkingDirectory=/home/your_user
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=code_issue_service
+Environment=ANTHROPIC_API_KEY=YOUR_AI_API_KEY
+Environment=OPENAI_API_KEY=YOUR_AI_API_KEY
+
+[Install]
+WantedBy=multi-user.target
+
