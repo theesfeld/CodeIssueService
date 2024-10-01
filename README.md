@@ -52,6 +52,7 @@ when an issue is opened in the repository, the httpd service is notified, and th
 3) Code is modified / generated to satisfy the issue
 4) The updated code is reviewed by AI for breaking changes
 5) a PR is created and pushed to the repository for manual review
+6) Local cleanup occurs
 
 Config file: /etc/code_issue_service.conf
 Systemd unit file: /etc/systemd/system/code_issue_service.service
