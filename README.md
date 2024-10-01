@@ -67,7 +67,7 @@ Issue will queue in the redis cache, and are solved one at a time.
 ---
 
 ##  Features
-```
+
 |    |   Feature         | Description |
 |----|-------------------|---------------------------------------------------------------|
 | ⚙️  | **Architecture**  | The project uses a multi-threaded C application with a service daemon setup to handle GitHub issues, parse JSON, and interact with web services. |
@@ -80,7 +80,7 @@ Issue will queue in the redis cache, and are solved one at a time.
 | 🛡️ | **Security**      | Employs syscalls for logging and signal handling but lacks detailed documentation on specific security protocols or data protection measures. |
 | 📦 | **Dependencies**  | Key libraries include `cJSON`, `curl`, `git2`, `hiredis`, `microhttpd`, and system-level integrations through `pthread` and `syslog`. |
 | 🚀 | **Scalability**   | The use of multi-threading and external service integrations suggest scalability, but specific scaling strategies are not documented. |
-```
+
 
 ---
 
