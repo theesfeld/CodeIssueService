@@ -67,7 +67,7 @@ Issue will queue in the redis cache, and are solved one at a time.
 ---
 
 ##  Features
-
+```
 |    |   Feature         | Description |
 |----|-------------------|---------------------------------------------------------------|
 | ⚙️  | **Architecture**  | The project uses a multi-threaded C application with a service daemon setup to handle GitHub issues, parse JSON, and interact with web services. |
