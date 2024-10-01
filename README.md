@@ -44,7 +44,24 @@
 
 ##  Overview
 
-The CodeIssueService is a sophisticated software project designed to enhance issue tracking and management for software development projects. Utilizing a combination of GitHub integration and real-time monitoring, it automatically notifies teams of new issues and facilitates rapid response and resolution. Key features include automated issue analysis, code generation, and the ability for seamless integration into existing systems via HTTP server capabilities. This service not only streamlines the development workflow but also significantly improves project efficiency and collaboration by ensuring developers can react swiftly to emerging codebase issues.
+This starts an httpd service on port 8080 (configurable). Included is a .yaml file for github actions.
+when an issue is opened in the repository, the httpd service is notified, and the following occurs:
+
+1) The repository is cloned locally
+2) The issue and repository are scanned by AI
+3) Code is modified / generated to satisfy the issue
+4) The updated code is reviewed by AI for breaking changes
+5) a PR is created and pushed to the repository for manual review
+
+Config file: /etc/code_issue_service.conf
+Systemd unit file: /etc/systemd/system/code_issue_service.service
+
+Issue will queue in the redis cache, and are solved one at a time.
+
+
+
+** PR ARE VERY VERY VERY WELCOME **
+** THIS IS A WORK IN PROGRESS **
 
 ---
 
